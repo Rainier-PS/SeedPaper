@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eco-friendly Seed Paper - Sustainable & Biodegradable Alternative">
+    <title>Seed Paper - Eco-Friendly Innovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 250px; /* Adjusted height */
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: block; /* Ensures proper alignment */
+            margin-left: auto; /* Centers the image */
+            margin-right: auto;
+        }
+        h1 {
+            color: #2d3436;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #0077b5;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #0077b5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background: #005f8b;
+            transform: translateY(-2px);
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        .feature-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 14px); /* 3 cards per row with gap */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            font-size: 2.5em;
+            color: #0077b5;
+            margin-bottom: 10px;
+        }
+        .return-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0077b5;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .return-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .burger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #0077b5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .burger-menu i {
+            color: white;
+            font-size: 24px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100vh;
+            background: #0077b5;
+            color: white;
+            padding: 80px 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar.active {
+            right: 0;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin: 15px 0;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero img {
+                max-height: 200px; /* Smaller height for mobile */
+            }
+            .feature-card {
+                width: 100%; /* Full width on mobile */
+                margin-bottom: 15px;
+            }
+            .features {
+                gap: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle {
+                font-size: 1.1em;
+            }
+            .cta-button {
+                width: 100%;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <a href="#">Home</a>
+        <a href="#why">Why Choose Seed Paper?</a>
+        <a href="#story">My Seed Paper Story</a>
+        <a href="#how">How to Use</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="card">
+            <div class="hero">
+                <img src="Seed%20Paper.jpg" alt="Seed Paper">
+            </div>
+            <h1>Seed Paper</h1>
+            <p class="subtitle">Eco-Friendly, Biodegradable & Sustainable</p>
+            <p class="bio">Say goodbye to wasteful paper! Seed Paper is a plantable, biodegradable paper embedded with seeds. Once used, simply plant it in soil and watch it grow. Join us in creating a greener future.</p>
+            <a href="seed-paper-research.pdf" class="cta-button" download>Download Full Research</a>
+        </div>
+
+        <!-- Why Choose Seed Paper Section -->
+        <h2 class="subtitle" id="why">Why Choose Seed Paper?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                <h3 class="feature-title">Sustainable</h3>
+                <p class="feature-text">Made from recycled materials and embedded with seeds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-recycle"></i></div>
+                <h3 class="feature-title">Zero Waste</h3>
+                <p class="feature-text">Decomposes naturally into the environment.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <h3 class="feature-title">Easy to Use</h3>
+                <p class="feature-text">Just plant it in soil, water it, and watch it grow!</p>
+            </div>
+        </div>
+
+        <!-- My Seed Paper Story Section -->
+        <div class="card" id="story">
+            <h2 class="subtitle">My Seed Paper Project</h2>
+            <p class="bio">
+                For the 2024 STEM Festival, I aimed to create a sustainable alternative to regular paper. My project focused on developing seed paper by controlling the amount of paper pulp. I investigated how different pulp concentrations affected the quality of the seed paper, looking at its thickness, weight, and how well it held seeds.
+                <br><br>
+                This project directly relates to Sustainable Development Goals, specifically: Goal 12, Responsible Consumption and Production, by recycling paper; and Goal 15, Life on Land, by promoting plant growth. The results showed that higher pulp concentrations produced stronger seed paper. My work was recognized at the festival with a 3rd place award in the upper secondary level competition. This experience has encouraged me to continue exploring simple, effective ways to support environmental sustainability.
+            </p>
+        </div>
+
+        <!-- How to Use Section -->
+        <h2 class="subtitle" id="how">How to Use Seed Paper</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-hand-holding-water"></i></div>
+                <h3 class="feature-title">Step 1: Prepare</h3>
+                <p class="feature-text">Choose a sunny spot in your garden or a pot with soil. Tear the seed paper into smaller pieces if needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                <h3 class="feature-title">Step 2: Plant</h3>
+                <p class="feature-text">Place the seed paper on top of the soil and cover it lightly with a thin layer of soil (about 1/4 inch).</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-tint"></i></div>
+                <h3 class="feature-title">Step 3: Water</h3>
+                <p class="feature-text">Water the soil regularly to keep it moist. Be patient, as germination can take 1-2 weeks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-sun"></i></div>
+                <h3 class="feature-title">Step 4: Sunlight</h3>
+                <p class="feature-text">Ensure the planted area receives plenty of sunlight. Most seeds need 6-8 hours of sunlight daily.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3 class="feature-title">Step 5: Care</h3>
+                <p class="feature-text">Remove weeds and continue watering as needed. Watch your seeds grow into beautiful plants!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-recycle"></i></div>
+                <h3 class="feature-title">Step 6: Recycle</h3>
+                <p class="feature-text">Once the plants grow, the paper will naturally decompose, leaving no waste behind.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Return to Top Button -->
+    <div class="return-top" id="returnTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script>
+        // Toggle sidebar
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Show/hide return to top button based on scroll position
+        window.onscroll = function() {
+            const returnTopButton = document.getElementById('returnTop');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                returnTopButton.classList.add('visible');
+            } else {
+                returnTopButton.classList.remove('visible');
+            }
+        };
+
+        // Smooth scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
